@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "nl.kingdev.zloader.mixin.mixins",
+  "refmap": "mixins.client.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinMinecraft"
+  ]
+}
