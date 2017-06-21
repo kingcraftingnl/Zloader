@@ -5,6 +5,8 @@ import com.darkmagician6.eventapi.EventTarget;
 import nl.kingdev.zloader.events.ZloaderInitializationEvent;
 import nl.kingdev.zloader.events.ZloaderPostInitializationEvent;
 import nl.kingdev.zloader.events.ZloaderPreInitializationEvent;
+import nl.kingdev.zloader.events.mcevents.EventRender2D;
+import nl.kingdev.zloader.utils.ColorUtils;
 import org.lwjgl.opengl.Display;
 
 /**
@@ -31,6 +33,12 @@ public class Zloader {
     }
 
     @EventTarget
+    public void onRender2D(EventRender2D e) {
+        e.getFr().drawString("Zloader!" , 8 , 6 , ColorUtils.rainbow(1 + 1 * 200000000L, 0.50F).getRGB() );
+
+    }
+
+    @EventTarget
     public void onInit(ZloaderInitializationEvent e){
         Display.setTitle("Zloader Initialization");
     }
@@ -39,5 +47,8 @@ public class Zloader {
     public void onPostInit(ZloaderPostInitializationEvent e){
         Display.setTitle("Zloader Loaded, Total Mods loaded:" + Zloader.getInstance().modCount);
     }
+
+
+
 
 }
