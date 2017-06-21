@@ -35,10 +35,10 @@ compileJava {
 }
 
 minecraft {
-    version = '1.12'
+    version = '1.11.2'
     runDir = 'run'
     tweakClass = 'nl.kingdev.zloader.launch.ZloaderTweaker'
-    mappings = 'snapshot_20170617'
+    mappings = 'snapshot_20161224'
     useDepAts = true
 
     makeObfSourceJar = true
@@ -81,6 +81,7 @@ dependencies {
         exclude module: 'commons-io'
     }
 }
+
 
 mixin {
     defaultObfuscationEnv notch

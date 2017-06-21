@@ -45,7 +45,7 @@ public class ZloaderTweaker implements ITweaker {
         Mixins.addConfiguration("mixins.client.json");
 
         MixinEnvironment.getDefaultEnvironment().setSide(MixinEnvironment.Side.CLIENT);
-
+        System.out.println("***Zloader ClassLoaderInjection!***");
     }
 
     @Override
