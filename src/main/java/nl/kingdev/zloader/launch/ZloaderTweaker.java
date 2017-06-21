@@ -40,7 +40,9 @@ public class ZloaderTweaker implements ITweaker {
     @Override
     public void injectIntoClassLoader(LaunchClassLoader classLoader) {
 
-        classLoader.registerTransformer("nl.kingdev.zloader.transformer.ZLoaderTransformer");
+
+
+
         MixinBootstrap.init();
 
         Mixins.addConfiguration("mixins.client.json");
@@ -48,7 +50,13 @@ public class ZloaderTweaker implements ITweaker {
         MixinEnvironment.getDefaultEnvironment().setSide(MixinEnvironment.Side.CLIENT);
         System.out.println("***Zloader ClassLoaderInjection!***");
 
+        try {
+            classLoader.loadClass("nl.kingdev.zloader.Zloader");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
+        //classLoader.registerTransformer("nl.kingdev.zloader.transformer.ZLoaderTransformer");
     }
 
     @Override

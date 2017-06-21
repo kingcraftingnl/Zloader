@@ -21,6 +21,8 @@ public class Zloader {
 
     public int modCount = 1;
 
+    public boolean debug = true;
+
     public void zloaderStart() {
         EventManager.register(this);
     }
